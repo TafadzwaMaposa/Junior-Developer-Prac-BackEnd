@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>League</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+    <h2 >Spring Boot Crud System -Student Registration</h2>
+
+    <div align = "center" >
+        <h3><a  th:href="@{'/new'}">Add Team Results</a></h3>
+    </div>
+
+    <tr>
+        <div class="col-sm-5" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>POS</th>
+                        <th>TEAM</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>F</th>
+                        <th>A</th>
+                        <th>D</th>
+                        <th>ts</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="CRUD : ${listteams }">
+                        <td th:text="${POS}">POS</td>
+                        <td th:text="${teams.name}">TEAM</td>
+                        <td th:text="${teams.P}">P</td>
+                        <td th:text="${teams.W}">W</td>
+                        <td th:text="${teams.DR}">D</td>
+                        <td th:text="${teams.L}">L</td>
+                        <td th:text="${teams.F}">F</td>
+                        <td th:text="${teams.A}">A</td>
+                        <td th:text="${teams.D}">D</td>
+                        <td th:text="${teams.PTS}">PTS</td>
+                        <td th:text="${teams.idS}"hidden></td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${teams.id}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${teams.id}}">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+    </tbody>
+    </table>
+    <div>
+    </div>
+</div>
+</body>
+</html>
